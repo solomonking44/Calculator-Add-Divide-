@@ -1,0 +1,64 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/ContentConfigs/src/main/synapse-config/api/ArithmaticOperationServiceAPI.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts>
+            <artifact>/ContentConfigs/src/main/synapse-config/endpoints/NumberDivisionEP.xml</artifact>
+            <artifact>/ContentConfigs/src/main/synapse-config/endpoints/NumberAdditionEP.xml</artifact>
+        </supportive-artifacts>
+        <registry-resources/>
+        <connector-resources/>
+    </artifacts>
+    <test-cases>
+        <test-case name="Operation_Add">
+            <input>
+                <request-path>/arithmaticAPI</request-path>
+                <request-method>POST</request-method>
+                <payload><![CDATA[{
+				   "Operation": "Add",
+				   "Arg1": "10",
+				   "Arg2": "25"}]]></payload>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{"AddIntegerResponse":{"AddIntegerResult":35}}]]></expected>
+                    <message>Actual value is not equals to the expected value 35</message>
+                </assertEquals>
+                <assertNotNull>
+                    <actual>$body</actual>
+                    <message>Payload is null in the add operation</message>
+                </assertNotNull>
+            </assertions>
+        </test-case>
+        <test-case name="Operation_Divide">
+            <input>
+                <request-path>/arithmaticAPI</request-path>
+                <request-method>POST</request-method>
+                <payload><![CDATA[{
+				   "Operation": "Divide",
+				   "Arg1": "25",
+				   "Arg2": "5"}]]></payload>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{"DivideIntegerResponse":{"DivideIntegerResult":5}}]]></expected>
+                    <message>Actual value is not equals to the expected value 5</message>
+                </assertEquals>
+                <assertNotNull>
+                    <actual>$body</actual>
+                    <message>Payload is null in the divide operation</message>
+                </assertNotNull>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>

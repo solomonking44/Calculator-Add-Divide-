@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="ArithmaticOperationServiceAPI" groupId="wso2.sampleContentBasedRoutingTemplate.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/ArithmaticOperationServiceAPI.xml</file>
+    </artifact>
+    <artifact name="ArithmaticOperationServiceAPI_swagger" groupId="wso2.sampleContentBasedRoutingTemplate.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ArithmaticOperationServiceAPI_swagger.yaml</file>
+    </artifact>
+    <artifact name="ArithmaticOperationServiceAPI_metadata" groupId="wso2.sampleContentBasedRoutingTemplate.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ArithmaticOperationServiceAPI_metadata.yaml</file>
+    </artifact>
+    <artifact name="NumberAdditionEP" groupId="wso2.sampleContentBasedRoutingTemplate.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/NumberAdditionEP.xml</file>
+    </artifact>
+    <artifact name="NumberDivisionEP" groupId="wso2.sampleContentBasedRoutingTemplate.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/NumberDivisionEP.xml</file>
+    </artifact>
+</artifacts>
